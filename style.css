@@ -3,6 +3,10 @@
   padding: 0;  
   box-sizing: border-box;
 }
+:root{
+  --primary-black-hex:#000000;
+  --primary-white-hex:#ffffff;
+}
 
 .card{
   width: 50%;
@@ -11,10 +15,32 @@
   gap: 2rem;
   margin: 2rem auto;
   padding: 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border: 0.1rem solid black;
+  box-shadow: 0 0 10px var(--primary-black-hex)/0.1;
+  border: 0.1rem solid var(--primary-black-hex);
 }
 img{
   width: 100%;
   height: auto;
+}
+@media screen and (max-width:1024px) {
+  .card{
+    width: 75%;
+  }
+}
+@media screen and (max-width:768px) {
+  .card-title{
+   font-size: 1.5rem;
+  }
+  .card{
+    width: 90%;
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+
+.card__container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(50%,1fr));
+  
 }
